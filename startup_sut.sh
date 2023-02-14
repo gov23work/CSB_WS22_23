@@ -13,11 +13,11 @@ sudo apt install -y curl
 
 #get script to change targets and change interval
 curl -X GET \
--H "Authorization: Bearer ya29.a0AVvZVsr3XE02gKiprQVMoZXX01MgU__KKMue6NEmg785g-92EddjYUUYsgT01M4T-0OfxvM8lexNHTdDcN45Ht8xN4BzCRD9gI2FrWok-r2_vVxD5HxKa5-kgUK3Xnoy-0TBYSJMKZRL_VhNrN-700AGQnVOatEaCgYKASsSAQASFQGbdwaIiCj11Y0HTnrFjiZK1Q-y4w0166" \
+-H "Authorization: Bearer PASTE_TOKEN_HERE" \
 -o "/tmp/change_interval.sh" \
 "https://storage.googleapis.com/storage/v1/b/scriptbucket_retrieval/o/change_interval.sh?alt=media"
 curl -X GET \
-  -H "Authorization: Bearer ya29.a0AVvZVsr3XE02gKiprQVMoZXX01MgU__KKMue6NEmg785g-92EddjYUUYsgT01M4T-0OfxvM8lexNHTdDcN45Ht8xN4BzCRD9gI2FrWok-r2_vVxD5HxKa5-kgUK3Xnoy-0TBYSJMKZRL_VhNrN-700AGQnVOatEaCgYKASsSAQASFQGbdwaIiCj11Y0HTnrFjiZK1Q-y4w0166" \
+  -H "Authorization: Bearer PASTE_TOKEN_HERE" \
   -o "/tmp/change_targets.sh" \
   "https://storage.googleapis.com/storage/v1/b/scriptbucket_retrieval/o/change_targets.sh?alt=media"
 chmod +x /tmp/change_targets.sh

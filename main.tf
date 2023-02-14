@@ -4,10 +4,6 @@ provider "google" {
   zone = "europe-west3-c"
 }
 
-/*resource "google_compute_address" "static" {
-  name = "ipv4-address"
-}*/
-
 #####################################################
 resource "google_compute_instance" "prometheus" {
   name = "prometheus"
@@ -32,7 +28,7 @@ resource "google_compute_instance" "prometheus" {
 ################################################
 
 resource "google_compute_instance" "client" {
-  count = 7
+  count = 1 # value can be 1,4,or 7 for my configurations
   name = "prometheus-client${count.index + 1}"
   machine_type = "e2-medium"
   tags = ["http-server","https-server","prometheus"]
@@ -53,4 +49,4 @@ resource "google_compute_instance" "client" {
 }
 #avg(avg_over_time(scrape_duration_seconds{instance!="localhost:9090"}[2m]))
 #rate(prometheus_tsdb_head_samples_appended_total[2m])
-#avg(100*avg_over_time(up{job="prometheus"}[1m]))
+#avg(100*avg_over_time(up{job="prometheus"}[2m]))
